@@ -1,0 +1,79 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Book Requests</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Admin Panel - Book Requests</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="request_book.html">Request Book</a>
+    <a href="confirmation.html">Confirmation</a>
+  </nav>
+
+  <div class="container">
+    <h2>Manage Requests</h2>
+
+    <!-- Static table for illustration -->
+    <table border="1" width="100%" cellpadding="10" cellspacing="0">
+      <tr style="background-color:#004080; color:white;">
+        <th>Request ID</th>
+        <th>Student Name</th>
+        <th>Book Title</th>
+        <th>Status</th>
+        <th>Update</th>
+      </tr>
+
+      <!-- Sample row 1 -->
+      <tr>
+        <td>1</td>
+        <td>Alice Kumar</td>
+        <td>Python Programming</td>
+        <td>
+          <form action="#" method="post">
+            <select name="status">
+              <option value="Pending">Pending</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+        </td>
+        <td>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+      </tr>
+
+      <!-- Sample row 2 -->
+      <tr>
+        <td>2</td>
+        <td>Ravi Singh</td>
+        <td>Data Structures</td>
+        <td>
+          <form action="#" method="post">
+            <select name="status">
+              <option value="Pending">Pending</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+        </td>
+        <td>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <footer>
+    &copy; 2025 College Library | Admin Book Request Panel
+  </footer>
+
+</body>
+</html>
