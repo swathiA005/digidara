@@ -1,0 +1,130 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Request Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: yellow;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+      background: yellow;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .message {
+      margin-top: 25px;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+
+    .admin-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .admin-section h3 {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Book Request Form</h2>
+    <form>
+      <label for="requestId">Request ID:</label>
+      <input type="text" id="requestId" name="requestId">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="bookTitle">Book Title:</label>
+      <input type="text" id="bookTitle" name="bookTitle">
+
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author">
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description"></textarea>
+
+      <label for="status">Status:</label>
+      <input type="text" id="status" name="status">
+
+      <label for="requestOn">Request On:</label>
+      <select id="requestOn" name="requestOn">
+        <option value="">Select Date</option>
+      </select>
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <div class="message">
+      Request Submitted Successfully!
+    </div>
+
+    <div class="admin-section">
+      <h3>Admin - Manage Book Requests</h3>
+      <p>List of submitted book requests will appear here.</p>
+    </div>
+  </div>
+
+</body>
+</html>
