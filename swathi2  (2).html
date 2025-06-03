@@ -1,0 +1,83 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8fb;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #2f3b52;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 16px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+        .card {
+            background: white;
+            margin: 100px auto;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        .success-icon {
+            font-size: 40px;
+            color: green;
+        }
+        .message {
+            font-size: 22px;
+            color: green;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .sub-message {
+            color: #555;
+            margin: 10px 0 20px;
+        }
+        .btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/request">Book request</a>
+    <a href="/confirmation">Confirmation</a>
+    <a href="/admin">Admin panel</a>
+</div>
+
+<div class="card">
+    <div class="success-icon">✅</div>
+    <div class="message">Submission Successful!</div>
+    <div class="sub-message">Thank you for your request. The admin will review it shortly.</div>
+
+    <form action="/next" method="get">
+        <button type="submit" class="btn">Next</button>
+    </form>
+</div>
+
+</body>
+</html>

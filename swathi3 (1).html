@@ -1,0 +1,137 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: green;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      margin: 0 2px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .approve {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .deny {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .delete {
+      background-color: #555;
+      color: white;
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #34495e;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">book Request</a>
+    <a href="#">confirmation</a>
+    <a href="#">admin panel</a>
+  </nav>
+
+  <h1>Admin - Manage Book Requests</h1>
+
+  <table style="margin: auto;">
+    <tr>
+      <td>
+        <button class="btn approve">Approve</button>
+        <button class="btn deny">Deny</button>
+        <button class="btn delete">Delete</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
