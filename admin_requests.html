@@ -1,0 +1,37 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../static/admin_request.css">
+</head>
+<body>
+    <h2>All Book Requests</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Book</th><th>Author</th><th>Status</th><th>Actions</th>
+        </tr>
+        {% for req in requests %}
+        <tr>
+            
+            <td>{{ req.student_name }}</td>
+            <td>{{ req.email }}</td>
+            <td>{{ req.book_title }}</td>
+            <td>{{ req.author }}</td>
+            <td>{{ req.status }}</td>
+            <td>
+                <form method="POST">
+                    <input type="hidden" name="email" value="{{ req.email }}">
+                    <select name="status">
+                        <option value="Pending" {% if req.status == 'Pending' %}selected{% endif %}>Pending</option>
+                        <option value="Approved" {% if req.status == 'Approved' %}selected{% endif %}>Approved</option>
+                        <option value="Rejected" {% if req.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+                
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
