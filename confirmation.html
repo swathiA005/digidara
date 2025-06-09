@@ -1,22 +1,11 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Submission Confirmation</title>
-    <link rel="stylesheet" href="../static/confirmation.css">
 </head>
 <body>
-
-
-<div class="card">
-    <div class="success-icon">✅</div>
-    <div class="message">Submission Successful!</div>
-    <div class="sub-message">Thank you for your request. The admin will review it shortly.</div>
-
-    <!-- <form action="/admin", method="POST">
-        <button type="submit" class="btn">Next</button>
-    </form> -->
-</div>
-
+    <h2>✅ Submission Successful!</h2>
+    <p>Thank you for your request, {{ name }}. The admin will review it shortly.</p>
+    <p>You can check the status of your request <a href="/check_status">here</a>.</p>
 </body>
 </html>
