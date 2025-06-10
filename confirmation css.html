@@ -1,0 +1,71 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission Confirmation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #f3e8ff, #f9f0ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #4b0082;
+        }
+
+        .confirmation-box {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(106, 13, 173, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        h2 {
+            color: #6a0dad;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        a {
+            color: #6a0dad;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #8a2be2;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-box">
+        <h2>✅ Submission Successful!</h2>
+        <p>Thank you for your request, <strong>{{ name }}</strong>. The admin will review it shortly.</p>
+        <p>You can check the status of your request <a href="/check_status">here</a>.</p>
+    </div>
+</body>
+</html>

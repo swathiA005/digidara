@@ -1,0 +1,164 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Book Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #f4e9ff, #fdfaff);
+            padding: 30px;
+            color: #4b0082;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #6a0dad;
+            font-size: 28px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(106, 13, 173, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #6a0dad;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f3ff;
+        }
+
+        tr:hover {
+            background-color: #f1e5ff;
+        }
+
+        select, input[type="date"] {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #fdf8ff;
+            color: #4b0082;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 7px 12px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8a2be2;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            th {
+                display: none;
+            }
+
+            td {
+                text-align: left;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            td::before {
+                position: absolute;
+                left: 15px;
+                top: 14px;
+                font-weight: bold;
+                color: #6a0dad;
+                content: attr(data-label);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>All Book Requests</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Status</th>
+            <th>Expected Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for req in requests %}
+        <tr>
+            <td data-label="ID">{{ req.request_id }}</td>
+            <td data-label="Name">{{ req.student_name }}</td>
+            <td data-label="Email">{{ req.email }}</td>
+            <td data-label="Book">{{ req.book_title }}</td>
+            <td data-label="Author">{{ req.author }}</td>
+            <td data-label="Status">{{ req.status }}</td>
+            <td data-label="Expected Date">{{ req.expected_date if req.expected_date else 'Not Set' }}</td>
+            <td data-label="Actions">
+                <form method="POST" action="/admin">
+                    <input type="hidden" name="request_id" value="{{ req.request_id }}">
+                    <select name="status">
+                        <option value="pending" {% if req.status == 'pending' %}selected{% endif %}>Pending</option>
+                        <option value="approved" {% if req.status == 'approved' %}selected{% endif %}>Approved</option>
+                        <option value="rejected" {% if req.status == 'rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+                    <input type="date" name="expected_date" value="{{ req.expected_date if req.expected_date else '' }}">
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

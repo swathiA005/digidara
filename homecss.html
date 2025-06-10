@@ -1,0 +1,167 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Book Request Portal</title>
+  <link rel="stylesheet" href="../static/homepage.css">
+</head>
+<body>
+
+  <header>
+    <h1>Library Book Request Portal</h1>
+  </header>
+
+ <div class="navbar">
+    <a href="../templates/homepage.html">Home</a>
+    <a href="../templates/request_book.html">Submit Request</a>
+    <a href="../templates/confirmation.html">confirmation</a>
+    <a href="../templates/admin_requests.html">admin panel</a>
+  </div>
+
+  <div class="container">
+    <h2>Student Verification</h2>
+    <form action="/confirmation" method="POST">
+      <label for="reg_no">Registration Number:</label>
+      <input type="text" id="reg_no" name="reg_no" required placeholder="e.g., 2023CSE001">
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option value="CSE">Computer Science</option>
+        <option value="ECE">Electronics</option>
+        <option value="MECH">Mechanical</option>
+        <option value="CIVIL">Civil</option>
+        <option value="EEE">Electrical</option>
+      </select>
+
+      <label for="year">Year:</label>
+      <select id="year" name="year" required>
+        <option value="">-- Select Year --</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+      </select>
+
+      <button type="submit">Proceed to Request Book</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 College Library | Book Request System
+  </footer>
+
+</body>
+</html><style>/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body and general background */
+body {
+  background-color: #f5f0fa;
+  color: #2e003e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #6a0dad;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+.navbar {
+  background-color: #4b0082;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #8a2be2;
+  border-radius: 5px;
+}
+
+/* Container for form */
+.container {
+  background-color: white;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(106, 13, 173, 0.2);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4b0082;
+}
+
+/* Form labels and inputs */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #f8f2ff;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #8a2be2;
+  outline: none;
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #8a2be2;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background-color: #4b0082;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}</style>
